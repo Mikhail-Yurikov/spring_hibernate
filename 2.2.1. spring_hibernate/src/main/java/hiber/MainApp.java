@@ -5,6 +5,7 @@ import hiber.model.Car;
 import hiber.model.User;
 import hiber.service.UserService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 import java.util.List;
 
 public class MainApp {
@@ -25,11 +26,10 @@ public class MainApp {
 
         List<User> users = userService.listUsers();
         for (User user : users) {
-            System.out.println(user.toString());
+            System.out.println(user);
         }
         User user = userService.findUserByCar("Diablo", 8);
-        System.out.println(user.toString());
-
+        System.out.println(user);
 
         context.close();
     }
